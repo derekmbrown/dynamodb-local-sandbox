@@ -1,0 +1,5 @@
+node_modules
+.npm
+.bash_history
+package*.json
+data/shared*
