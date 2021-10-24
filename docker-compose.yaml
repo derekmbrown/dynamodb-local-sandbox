@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+
+  # ---------- #
+  #    HAPI    # 
+  # ---------- #
+  hapi_service:
+    container_name: web
+    image: node:alpine
+    environment:
+      - CONTAINER_NAME=web
+      - AWS_ACCESS_KEY_ID=DUMMYIDEXAMPLE
+      - AWS_SECRET_ACCESS_KEY=DUMMYEXAMPLEKEY
+    working_dir: /usr/src/app
+    volumes:
+      - ./src:/usr/src/app
+    ports:
+      - 80:3000
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        node -v
+        npm init -y
+        npm i aws-sdk hapi
+        node server.js
+
+  # -------------- #
+  #    DYNAMODB    #
+  # -------------- #
+  dynamodb_service:
+    container_name: data
+    image: amazon/dynamodb-local:latest
+    environment:
+      - CONTAINER_NAME=data
+    ports:
+      - 8000:8000
+    working_dir: /home/dynamodblocal
+    volumes:
+      - ./data:/home/dynamodblocal/data
+    command: -jar DynamoDBLocal.jar -sharedDb -optimizeDbBeforeStartup -dbPath ./data
