@@ -1,4 +1,4 @@
-# dynamodb-sandbox
+# dynamodb-local-sandbox
 
 A simple local Dockerized sandbox environment to play around with the DynamoDB APIs using the AWS SDK for Javascript and DynamoDB. [Hapi](https://hapi.dev/) is used to keep the Node container running and to build APIs to interact with the AWS SDK.
 
