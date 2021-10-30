@@ -1,6 +1,6 @@
 # dynamodb-local-sandbox
 
-A Dockerized local sandbox environment to practice using the DynamoDB APIs with [AWS SDK for Javascript](https://docs.aws.amazon.com/sdk-for-javascript/index.html), a [local version of DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html) and [Hapi](https://hapi.dev/).
+A Dockerized local sandbox environment to interact using the DynamoDB APIs with [AWS SDK for Javascript](https://docs.aws.amazon.com/sdk-for-javascript/index.html), a [local version of DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html) and [Hapi](https://hapi.dev/).
 
 | Service          | Image                                                                          | Container |
 | -                | -                                                                              | -         |
