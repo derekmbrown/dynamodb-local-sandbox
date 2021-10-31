@@ -17,10 +17,10 @@ async function run() {
   console.time('Timer')
   console.log('Running... ')
 
-  // resp = await scanItems('TestDB')
+  resp = await scanItems('TestDB')
   // resp = await scanItemsWithFilter('TestDB')
   // resp = await queryItem('TestDB')
-  resp = await queryItemWithFilter('TestDB')
+  // resp = await queryItemWithFilter('TestDB')
   // resp = await putItem('TestDB')
   // resp = await batchWriteItems()
   // resp = await updateItem('TestDB')
