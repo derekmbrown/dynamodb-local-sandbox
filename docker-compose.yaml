@@ -29,13 +29,13 @@ services:
   #    DYNAMODB    #
   # -------------- #
   dynamodb_service:
-    container_name: data
+    container_name: db
     image: amazon/dynamodb-local:latest
     environment:
-      - CONTAINER_NAME=data
+      - CONTAINER_NAME=db
     ports:
       - 8000:8000
     working_dir: /home/dynamodblocal
     volumes:
-      - ./data:/home/dynamodblocal/data
+      - ./db:/home/dynamodblocal/data
     command: -jar DynamoDBLocal.jar -sharedDb -optimizeDbBeforeStartup -dbPath ./data
