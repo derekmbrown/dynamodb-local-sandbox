@@ -23,6 +23,7 @@ async function run() {
   // resp = await putItem('TestDB')
   // resp = await batchWriteItems()
   // resp = await updateItem('TestDB')
+  // resp = await deleteItem('TestDB')
 
   console.log(resp)
   console.timeEnd('Timer')
@@ -76,7 +77,10 @@ async function queryItemWithFilter(tableName) {
       TableName: tableName,
       KeyConditionExpression: 'Id = :idParam',
       FilterExpression: 'contains (Message, :message)',
-      ExpressionAttributeValues: { ':idParam': '2', ':message': 'second' }
+      ExpressionAttributeValues: { 
+        ':idParam': '2', 
+        ':message': 'second' 
+      }
     }).promise()
     return resp
   } catch (err) {
@@ -89,7 +93,12 @@ async function putItem(tableName, item) {
   try {
     var resp = await ddb.put({
       TableName: tableName,
-      Item: { 'Id': '3', 'DateCreated': '300', 'DateModified': '301', 'Message': 'This is the third message' }
+      Item: { 
+        'Id': '3', 
+        'DateCreated': '300', 
+        'DateModified': '301', 
+        'Message': 'This is the third message' 
+      }
     }).promise()
     return resp
   } catch (err) {
@@ -141,6 +150,19 @@ async function updateItem(tableName) {
       Key: { 'Id': '3' },
       UpdateExpression: 'set DateModified = :dateModifiedParam',
       ExpressionAttributeValues: { ':dateModifiedParam': '302' }
+    }).promise()
+    return resp
+  } catch (err) {
+    return err
+  }
+}
+
+// Delete item from table
+async function deleteItem(tableName) {
+  try {
+    var resp = await ddb.delete({
+      TableName: tableName,
+      Key: { 'Id': '3' }
     }).promise()
     return resp
   } catch (err) {
