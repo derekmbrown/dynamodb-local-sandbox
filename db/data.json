@@ -1,16 +1,40 @@
 {
   "TestDB": [
-    {"PutRequest": {"Item":{
-      "Id":{"S":"1"},
-      "DateCreated":{"S":"100" },
-      "DateModified":{"S":"101" },
-      "Message":{"S":"This is the first message"}
-    }}},
-    {"PutRequest": {"Item":{
-      "Id":{"S":"2"},
-      "DateCreated":{"S":"200" },
-      "DateModified":{"S":"201" },
-      "Message":{"S":"This is the second message"}
-    }}}
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "1"
+          },
+          "DateCreated": {
+            "S": "100"
+          },
+          "DateModified": {
+            "S": "101"
+          },
+          "Message": {
+            "S": "This is the first message"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "2"
+          },
+          "DateCreated": {
+            "S": "200"
+          },
+          "DateModified": {
+            "S": "201"
+          },
+          "Message": {
+            "S": "This is the second message"
+          }
+        }
+      }
+    }
   ]
 }

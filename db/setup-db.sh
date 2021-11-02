@@ -24,3 +24,5 @@ aws dynamodb batch-write-item \
     --output \
         text >> /dev/null
 echo 'Data loaded.'
+
+sleep 2
